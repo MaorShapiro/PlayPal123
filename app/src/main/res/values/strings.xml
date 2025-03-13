@@ -1,0 +1,33 @@
+<resources>
+    <string name="app_name" translatable="false">PlayPal</string>
+    <!-- מחרוזת עבור prompt של ספינר גיל -->
+    <string name="choose_your_age">בחר גיל</string>
+
+    <!-- מחרוזת עבור prompt של ספינר מדינה -->
+    <string name="choose_your_country">בחר מדינה</string>
+
+    <!-- מחרוזת עבור prompt של ספינר שפה -->
+    <string name="choose_your_language">בחר שפה</string>
+
+    <string-array name="age_options">
+        <item>18</item>
+        <item>19</item>
+        <item>20</item>
+        <item>21</item>
+        <item>22</item>
+    </string-array>
+
+    <string-array name="country_options">
+        <item>ישראל</item>
+        <item>ארצות הברית</item>
+        <item>צרפת</item>
+        <item>גרמניה</item>
+    </string-array>
+
+    <string-array name="language_options">
+        <item>עברית</item>
+        <item>אנגלית</item>
+        <item>ערבית</item>
+        <item>רוסית</item>
+    </string-array>
+</resources>

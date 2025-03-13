@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:weightSum="20"
+    android:background="@color/black"
+
+    android:orientation="vertical">
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="2">
+
+    <View
+        android:id="@+id/top_bar"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:background="#CC6200EE"
+
+        />
+    </FrameLayout>
+
+    <TextView
+        android:id="@+id/tvSearchTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Profile"
+        android:paddingTop="10dp"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:textColor="@color/white"
+        android:layout_marginBottom="20dp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        android:layout_weight="18"
+        android:padding="16dp">
+
+        <!-- First Name -->
+        <EditText
+            android:id="@+id/et_user_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="שם משתמש"
+            android:padding="10dp"
+            android:background="@drawable/rounded_edittext"
+            android:textSize="24sp"
+            android:textColor="@color/black"
+            android:layout_margin="10dp"
+            android:textColorHint="@color/black"
+            android:inputType="textPersonName" />
+
+
+
+
+        <!-- Email -->
+        <EditText
+            android:id="@+id/et_email"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="אימייל"
+            android:textSize="24sp"
+            android:layout_margin="10dp"
+            android:padding="10dp"
+            android:background="@drawable/rounded_edittext"
+            android:textColor="@color/black"
+            android:textColorHint="@color/black"
+            android:inputType="textEmailAddress" />
+
+        <!-- Password -->
+        <EditText
+            android:id="@+id/et_password"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="סיסמה"
+            android:layout_margin="10dp"
+            android:textSize="24sp"
+            android:textColorHint="@color/black"
+            android:textColor="@color/black"
+            android:inputType="textPassword"
+            android:padding="10dp"
+            android:background="@drawable/rounded_edittext" />
+
+        <!-- Phone Number -->
+        <EditText
+            android:id="@+id/et_phone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="טלפון"
+            android:layout_margin="10dp"
+            android:textSize="24sp"
+            android:padding="10dp"
+            android:background="@drawable/rounded_edittext"
+            android:textColorHint="@color/black"
+            android:textColor="@color/black"
+            android:inputType="phone" />
+
+        <!-- Gender -->
+        <RadioGroup
+            android:id="@+id/rg_gender"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center">
+
+            <RadioButton
+                android:id="@+id/rb_male"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="זכר"
+                android:layout_margin="5dp"
+                android:textSize="20sp"
+                android:textColor="@color/white"/>
+
+
+            <RadioButton
+                android:id="@+id/rb_female"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="נקבה"
+                android:layout_margin="5dp"
+                android:textSize="20sp"
+                android:textColor="@color/white"/>
+
+            <RadioButton
+                android:id="@+id/rb_other"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="אחר"
+                android:layout_margin="5dp"
+                android:textSize="20sp"
+                android:textColor="@color/white"/>
+        </RadioGroup>
+
+        <!-- Age -->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_gravity="center"
+            >
+
+            <Spinner
+                android:id="@+id/sp_age"
+                android:layout_width="100dp"
+                android:layout_height="30dp"
+                android:layout_margin="10dp"
+                android:entries="@array/age_options"
+                android:gravity="center"
+                android:prompt="@string/choose_your_age"
+                android:background="@drawable/rounded_edittext" />
+
+            <Spinner
+                android:id="@+id/sp_country"
+                android:layout_width="100dp"
+                android:layout_height="30dp"
+                android:layout_margin="10dp"
+                android:entries="@array/country_options"
+                android:prompt="@string/choose_your_country"
+                android:gravity="center"
+                android:background="@drawable/rounded_edittext"/>
+
+            <Spinner
+                android:id="@+id/sp_language"
+                android:layout_width="100dp"
+                android:layout_height="30dp"
+                android:layout_margin="10dp"
+                android:gravity="center"
+                android:entries="@array/language_options"
+                android:prompt="@string/choose_your_language"
+                android:background="@drawable/rounded_edittext" />
+        </LinearLayout>
+
+
+        <!-- Favorite Games -->
+
+        <!-- Submit Button -->
+
+        <ImageView
+            android:id="@+id/imageView2"
+            android:layout_gravity="center"
+            android:layout_width="100dp"
+            android:background="@color/pink_light"
+            android:layout_height="100dp"
+            app:srcCompat="@drawable/common_google_signin_btn_icon_dark" />
+
+
+
+        <Button
+            android:id="@+id/btn_submit"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="שמור"
+            android:layout_marginTop="16dp"
+            />
+
+    </LinearLayout>
+
+</LinearLayout>

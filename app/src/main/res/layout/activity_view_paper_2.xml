@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:weightSum="20">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="18">
+
+        <View
+            android:id="@+id/top_bar"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:background="#CC6200EE"
+
+        />
+
+
+        <androidx.viewpager2.widget.ViewPager2
+            android:id="@+id/view_pager2"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:orientation="horizontal"
+            android:weightSum="20">
+
+            <!-- תמונת פרופיל מצד שמאל -->
+            <ImageView
+                android:id="@+id/imageButton3"
+                android:layout_width="0dp"
+                android:layout_height="50dp"
+                android:layout_weight="4"
+                android:layout_margin="4dp"
+                android:background="@android:color/transparent"
+                android:src="@drawable/avatar" />
+
+            <!-- כותרת (אם נדרשת) -->
+            <TextView
+                android:id="@+id/textView3"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="8"
+                android:text="" />
+
+            <!-- כפתור התראה (ToggleButton) בצד ימין -->
+            <ToggleButton
+                android:id="@+id/allowNotifications"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="2"
+                android:background="@android:color/transparent"
+                app:srcCompat="@android:drawable/presence_online"
+                android:layout_gravity="end"/>
+
+            <!-- כפתור שליחת הודעות (ImageButton) -->
+            <ImageButton
+                android:id="@+id/sendToFriends"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="2"
+                android:background="@android:color/transparent"
+                app:srcCompat="@android:drawable/stat_notify_chat" />
+
+            <!-- כפתור תפריט (ImageButton) -->
+            <ImageButton
+                android:id="@+id/menu_button"
+                android:layout_width="0dp"
+                android:layout_height="60dp"
+                android:layout_weight="4"
+                android:background="@android:color/transparent"
+                android:src="@drawable/menu" />
+
+        </LinearLayout>
+
+
+    </FrameLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:orientation="horizontal"
+        android:background="#EEEEEE"
+        android:padding="8dp"
+        android:gravity="center"
+        android:layout_weight="2"
+        android:backgroundTint="@color/black"
+        >
+
+        <Button
+            android:id="@+id/page1_button"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text=""
+            android:drawableTop="@drawable/house"
+            android:gravity="center"
+            android:layout_margin="5dp"
+            android:background="@drawable/rounded_background"/>
+
+        <Button
+            android:id="@+id/page2_button"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text=""
+            android:gravity="center"
+            android:layout_margin="5dp"
+            android:drawableTop="@drawable/prefrences"
+            android:background="@drawable/rounded_background"/>
+
+        <Button
+            android:id="@+id/page3_button"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text=""
+            android:layout_margin="5dp"
+            android:gravity="center"
+            android:drawableTop="@drawable/avatar"
+            android:background="@drawable/rounded_background"/>
+    </LinearLayout>
+</LinearLayout>

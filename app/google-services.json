@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "207199161823",
+    "project_id": "playpalgame-e7d56",
+    "storage_bucket": "playpalgame-e7d56.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:207199161823:android:e0603a4dfa10ffaa74086a",
+        "android_client_info": {
+          "package_name": "com.example.playpal"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD1nswO53xH11ag9owjcw-x6VdzvbJh5vs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

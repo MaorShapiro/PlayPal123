@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/black"
+    android:orientation="vertical"
+    android:weightSum="20">
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_weight="0">
+
+    <View
+        android:id="@+id/top_bar"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:background="#CC6200EE"
+
+        />
+    </FrameLayout>
+    <TextView
+        android:id="@+id/tvGreeting"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:text="שלום, אנא התחבר!"
+        android:textColor="@color/orange_accent"
+        android:textSize="30sp"
+        android:layout_weight="1"
+
+        android:layout_gravity="center"/>
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Friends"
+        android:textSize="20sp"
+        android:layout_gravity="center"
+        android:gravity="bottom"
+        android:textColor="@color/white"
+        android:layout_weight="1"
+        />
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="18">
+
+        <View
+            android:id="@+id/view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="10dp"
+            android:background="@drawable/rounded_background"
+            android:backgroundTint="@color/blue_accent" />
+
+        <ListView
+            android:id="@+id/friends_listView"
+            android:layout_marginTop="11dp"
+            android:layout_marginBottom="12dp"
+            android:layout_gravity="center"
+            android:layout_width="380dp"
+            android:layout_height="match_parent" />
+    </FrameLayout>
+
+</LinearLayout>
