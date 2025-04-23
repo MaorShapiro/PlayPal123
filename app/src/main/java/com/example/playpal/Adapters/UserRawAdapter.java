@@ -31,6 +31,7 @@ public class UserRawAdapter extends ArrayAdapter<User> {
     private List<User> users;
     FirebaseDatabase database = FirebaseDatabase.getInstance();
     DatabaseReference myRef = database.getReference("Users");
+    public static String imageProfile = "";
 
     public UserRawAdapter(Context context, List<User> users) {
         super(context, R.layout.activity_user_raw, users);
@@ -101,8 +102,12 @@ public class UserRawAdapter extends ArrayAdapter<User> {
                 intent.putExtra("userLevel", viewHolder.tvLevel.getText().toString());
                 intent.putExtra("country", currentUser.getCountry());
                 intent.putExtra("languages", currentUser.getLanguage());
-                intent.putExtra("image", currentUser.getImageBase64() != null ? currentUser.getImageBase64() : "");
+                //intent.putExtra("image", currentUser.getImageBase64() != null ? currentUser.getImageBase64() : "");
                 intent.putExtra("receiverId", currentUser.getId());
+
+                intent.putExtra("adapterSource", "UserRawAdapter");
+                imageProfile = currentUser.getImageBase64() != null ? currentUser.getImageBase64() : "";
+
                 context.startActivity(intent);
             });
 

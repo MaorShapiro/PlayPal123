@@ -109,7 +109,7 @@ public class ViewPaper2Page extends AppCompatActivity {
 
     // טעינת תמונת המשתמש
     private void loadProfileImage() {
-        userRef.child("imageBase64").addListenerForSingleValueEvent(new ValueEventListener() {
+        userRef.child("imageBase64").addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 String base64Image = dataSnapshot.getValue(String.class);

@@ -16,6 +16,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.playpal.Adapters.FriendRawAdapter;
+import com.example.playpal.Adapters.UserRawAdapter;
 import com.example.playpal.Utills.ImageUtil;
 import com.example.playpal.Adapters.PrivateChatAdapter;
 import com.example.playpal.Models.Message;
@@ -72,7 +73,7 @@ public class UserPage extends AppCompatActivity implements View.OnClickListener 
         String userLevel = getIntent().getStringExtra("userLevel");
         String country = getIntent().getStringExtra("country");
         String language = getIntent().getStringExtra("languages");
-
+        String adapterSource = getIntent().getStringExtra("adapterSource");
         receiverId = getIntent().getStringExtra("receiverId");
 
         tvUname.setText(userName);
@@ -81,21 +82,33 @@ public class UserPage extends AppCompatActivity implements View.OnClickListener 
         tvCountry.setText("Country: "+country);
         tvLanguages.setText("Language: "+language);
 
-       String image= FriendRawAdapter.imageProfule;
 
-        if (image != null && !image.isEmpty()) {
-            Bitmap decodedBitmap = ImageUtil.convertFrom64base(image);
-            if (decodedBitmap != null) {
-                pfp.setImageBitmap(decodedBitmap);
-            } else {
-                Log.e("ImageError", "Failed to decode Base64 image");
-                pfp.setImageResource(R.drawable.avatar);
+
+        if ("FriendRawAdapter".equals(adapterSource)) {
+            // הגעת מ-FriendRawAdapter, הצג את התמונה מ-FriendRawAdapter
+            String image = FriendRawAdapter.imageProfile;
+            if (image != null && !image.isEmpty()) {
+                Bitmap decodedBitmap = ImageUtil.convertFrom64base(image);
+                if (decodedBitmap != null) {
+                    pfp.setImageBitmap(decodedBitmap);
+                } else {
+                    Log.e("ImageError", "Failed to decode Base64 image");
+                    pfp.setImageResource(R.drawable.avatar);
+                }
             }
-        } else {
-            pfp.setImageResource(R.drawable.avatar);
+        } else if ("UserRawAdapter".equals(adapterSource)) {
+            // הגעת מ-UserRawAdapter, הצג את התמונה מ-UserRawAdapter
+            String image2 = UserRawAdapter.imageProfile;
+            if (image2 != null && !image2.isEmpty()) {
+                Bitmap decodedBitmap = ImageUtil.convertFrom64base(image2);
+                if (decodedBitmap != null) {
+                    pfp.setImageBitmap(decodedBitmap);
+                } else {
+                    Log.e("ImageError", "Failed to decode Base64 image");
+                    pfp.setImageResource(R.drawable.avatar);
+                }
+            }
         }
-//
-
 
         // טעינת הודעות קיימות
         loadMessages();

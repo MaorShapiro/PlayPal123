@@ -33,7 +33,7 @@ public class FriendRawAdapter extends ArrayAdapter<User> {
     private List<User> friendsList;
     FirebaseDatabase database = FirebaseDatabase.getInstance();
     DatabaseReference myRef = database.getReference("Users");
-    public static String imageProfule="";
+    public static String imageProfile="";
 
     public FriendRawAdapter(Context context, List<User> friendsList) {
         super(context, R.layout.activity_friend_raw, friendsList);
@@ -92,8 +92,8 @@ public class FriendRawAdapter extends ArrayAdapter<User> {
 
 
 
-
-            imageProfule=friend.getImageBase64().toString();
+            intent.putExtra("adapterSource", "FriendRawAdapter");
+            imageProfile=friend.getImageBase64().toString();
 
                     // != null ? friend.getImageBase64() : "");
             intent.putExtra("receiverId", friend.getId());
